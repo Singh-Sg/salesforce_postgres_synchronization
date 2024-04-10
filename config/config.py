@@ -18,5 +18,4 @@ class Config:
     REDIS_PORT = 'your_redis_port'
     REDIS_PASSWORD = 'your_redis_password'
 
-    LOG_FILE = 'salesforce_postgres_sync.log'
     LOG_LEVEL = logging.INFO
