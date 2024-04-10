@@ -34,7 +34,7 @@ def main():
         ids = postgres.get_ids_from_db(table_name)
 
         # Cache fetched records
-        redis_cache.set_cache(f"{table_name}_records", str(records))
+        redis_cache.set_cache(f"{table_name}_records", str(query_records['records']))
 
         # deleting data from salesforce
         salesforce.delete_records(ids[-1:])
