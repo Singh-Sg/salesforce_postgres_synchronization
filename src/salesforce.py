@@ -1,5 +1,3 @@
-# src/salesforce.py
-import requests
 import logging
 from config.config import Config
 from simple_salesforce import Salesforce, SalesforceLogin
@@ -15,7 +13,6 @@ class SalesforceAPI:
             session_id, instance = SalesforceLogin(username=Config.SALESFORCE_USERNAME, 
                                                     password=Config.SALESFORCE_PASSWORD, 
                                                     security_token=Config.SALESFORCE_SECURITY_TOKEN)
-            self.logger.info("initiated salesforce instance")
             return Salesforce(instance=instance, session_id=session_id)
         except Exception as e:
             self.logger.error(f"Error while initiating salesforce instance: {str(e)}")
